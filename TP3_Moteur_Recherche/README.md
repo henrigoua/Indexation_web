@@ -78,7 +78,7 @@ TP3_Moteur_Recherche/
 
 1. **Cloner le dépôt :**
    ```bash
-   git clone https://github.com/votre-projet/moteur-recherche.git
+   git clone https://github.com/henrigoua/Indexation_web.git
    cd moteur-recherche
    ```
 

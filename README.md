@@ -1,111 +1,118 @@
+# **Projets : Indexation et Recherche**
 
-# **INDEXATION_WEB**
+Bienvenue dans la collection de projets réalisés dans le cadre de l'**apprentissage des systèmes d'indexation et des moteurs de recherche**. Ces projets illustrent différents aspects du traitement et de la recherche de données, depuis la collecte sur le web jusqu'à la création d'un moteur de recherche fonctionnel.
 
-## **Description**
-`INDEXATION_WEB` est un projet Python conçu pour effectuer du web scraping et de l'indexation. Il permet d'explorer des sites web, d'extraire des informations pertinentes (comme les titres, paragraphes et liens), et de les sauvegarder dans des fichiers JSON. Le projet respecte les règles définies dans le fichier `robots.txt` des sites web pour garantir un scraping éthique.
+## **Structure des projets**
 
----
+1. **[TP1 : Web Crawler](TP1/README.md)**
+   - **Objectif** : Développer un crawler pour extraire automatiquement des données d'un site web.
+   - **Principales fonctionnalités** :
+     - Extraction des informations structurées.
+     - Sauvegarde des données dans un format JSON réutilisable.
+     - Gestion des URL pour éviter les doublons.
+   - **Documentation complète** : Consultez le fichier [`TP1/README.md`](TP1/README.md).
 
-## **Fonctionnalités**
-- Crawling d’un site web à partir d’une URL de départ.
-- Extraction des informations suivantes :
-  - Titre de la page.
-  - Premier paragraphe.
-  - Liens internes et externes.
-- Respect des règles de politesse (`robots.txt`) et gestion des délais entre les requêtes.
-- Sauvegarde des résultats dans des fichiers JSON pour analyse ou utilisation ultérieure.
-- Tests unitaires pour garantir la fiabilité des fonctions principales.
+2. **[TP2 : Développement d’un Index](tp2_developpement_index/README.md)**
+   - **Objectif** : Construire un système d’indexation inversée permettant une recherche efficace dans un corpus de documents textuels.
+   - **Principales fonctionnalités** :
+     - Génération d’un index inversé basé sur des documents fournis.
+     - Suppression des mots vides (stopwords) pour des résultats pertinents.
+     - Recherche rapide en utilisant l’index généré.
+   - **Documentation complète** : Consultez le fichier [`tp2_developpement_index/README.md`](tp2_developpement_index/README.md).
 
----
-
-## **Structure du projet**
-```
-INDEXATION_WEB/
-│
-├── output/                 # Dossier contenant les résultats du crawling
-│   ├── results.json        # Résultats générés par le crawler
-│   ├── results_ref.json    # Résultats de référence pour les tests
-│
-├── tests/                  # Dossier contenant les tests unitaires
-│   ├── test_crawler.py     # Tests pour le module crawler.py
-│   ├── test_extractor.py   # Tests pour le module extractor.py
-│   ├── test_utils.py       # Tests pour le module utils.py
-│
-├── web_crawler/            # Dossier contenant le code source
-│   ├── crawler.py          # Module principal pour le crawling
-│   ├── extractor.py        # Module pour extraire les données des pages
-│   ├── utils.py            # Fonctions utilitaires pour HTTP et robots.txt
-│   ├── main.py             # Point d’entrée principal pour exécuter le projet
-│
-├── README.md               # Documentation du projet
-├── requirements.txt        # Liste des dépendances Python
-```
+3. **[TP3 : Moteur de Recherche](TP3_Moteur_Recherche/README.md)**
+   - **Objectif** : Mettre en œuvre un moteur de recherche avancé avec des fonctionnalités comme le filtrage, le classement, et une interface utilisateur.
+   - **Principales fonctionnalités** :
+     - Recherche par mots-clés et synonymes.
+     - Classement des résultats par pertinence.
+     - Interface utilisateur conviviale (basée sur FastAPI).
+   - **Documentation complète** : Consultez le fichier [`TP3_Moteur_Recherche/README.md`](TP3_Moteur_Recherche/README.md).
 
 ---
 
-## **Installation**
+## **Objectifs pédagogiques**
 
-### **Prérequis**
-- Python 3.8 ou une version ultérieure.
-- Un gestionnaire de paquets comme `pip`.
+Ces projets couvrent un large éventail de concepts liés à l'indexation et à la recherche, notamment :
 
-### **Étapes**
-1. Clone le dépôt :
+1. **Collecte de données :**
+   - Compréhension des structures de sites web et extraction des informations utiles.
+   - Utilisation de bibliothèques Python comme `requests` et `BeautifulSoup`.
+
+2. **Indexation et traitement du texte :**
+   - Création d’un index inversé pour optimiser la recherche.
+   - Tokenisation et suppression des mots vides pour améliorer la précision.
+
+3. **Recherche et classement :**
+   - Implémentation d'algorithmes de recherche et de filtrage.
+   - Classement des résultats en fonction de leur pertinence.
+   - Introduction aux modèles de recherche comme BM25 et des approches personnalisées.
+
+4. **Développement d'une API et d'une interface utilisateur :**
+   - Construction d’une API REST avec FastAPI.
+   - Création d’une interface utilisateur intuitive pour exécuter les recherches.
+
+---
+
+## **Organisation des projets**
+
+Chaque projet est contenu dans son propre répertoire et comprend :
+- Un fichier `README.md` décrivant le projet en détail.
+- Une structure modulaire pour le code source, les données et les tests.
+- Des tests unitaires pour valider les fonctionnalités.
+
+---
+
+## **Prérequis**
+
+Les projets sont développés en Python et nécessitent :
+- Python 3.8 ou version ultérieure.
+- Les dépendances listées dans chaque fichier `requirements.txt`.
+
+---
+
+## **Exécution des projets**
+
+1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/henrigoua/Indexation_web.git
-   cd indexation_web
+   git clone git@github.com:henrigoua/Indexation_web.git
+   cd Indexation_web
    ```
 
-2. Crée un environnement virtuel et active-le :
+2. Naviguez dans le dossier du projet souhaité (par exemple, TP3) :
    ```bash
-   python -m venv venv
-   source venv/bin/activate    # Sur Linux/Mac
-   venv\Scripts\activate       # Sur Windows
+   cd TP3_Moteur_Recherche
    ```
 
-3. Installe les dépendances :
+3. Installez les dépendances :
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Assure-vous que la structure des dossiers est conforme.
+4. Suivez les instructions spécifiques à chaque projet dans son `README.md`.
 
 ---
 
-## **Utilisation**
+## **Contributions**
 
-### **Exécution du crawler**
-Pour démarrer le crawler, exécute le fichier `main.py` :
-```bash
-python web_crawler/main.py
-```
-Par défaut, les résultats sont sauvegardés dans `output/results.json`.
-
-### **Personnalisation**
-vous pouvez modifier les paramètres suivants directement dans le fichier `main.py` :
-- **start_url** : URL de départ du crawl.
-- **max_pages** : Nombre maximum de pages à explorer.
-- **delay** : Délai (en secondes) entre les requêtes pour éviter la surcharge du serveur.
+Ce dépôt est un projet éducatif. Si vous souhaitez contribuer :
+1. Forkez le dépôt.
+2. Créez une branche pour vos modifications :
+   ```bash
+   git checkout -b feature/nouvelle_fonctionnalite
+   ```
+3. Soumettez une Pull Request.
 
 ---
 
-## **Tests**
-Pour exécuter les tests unitaires :
-```bash
-python -m unittest discover -s tests
-```
+## **Auteur**
 
-Cela lancera tous les tests définis dans le dossier `tests`.
-
----
-
-## **Contributeurs**
-- **Goua Beedi** 
+- **Henri Goua** 
 
 ---
 
 ## **Licence**
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+Ce projet est sous licence MIT. Consultez le fichier [`LICENSE`](LICENSE) pour plus de détails.
 
 ---
 

@@ -1,0 +1,2 @@
+# Python 3.8 ou supérieur requis
+python_version >= "3.8"
